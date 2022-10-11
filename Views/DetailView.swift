@@ -12,10 +12,12 @@ struct DetailView: View {
     var body: some View {
         List {
             Section(header: Text("Meeting Info")) {
-                Label("Start Meeting", systemImage: "timer")
-                    .accessibilityLabel("Select to start the scrum meeting and the timer")
-                    .font(.headline)
-                    .foregroundColor(.accentColor)
+                NavigationLink(destination: MeetingView()) {
+                    Label("Start Meeting", systemImage: "timer")
+                        .accessibilityLabel("Select to start the scrum meeting and the timer")
+                        .font(.headline)
+                        .foregroundColor(.accentColor)
+                }
                 
                 HStack {
                     Label("Length", systemImage: "clock")
@@ -43,6 +45,7 @@ struct DetailView: View {
                 }
             }
         }
+        .navigationTitle(scrum.title)
     }
 }
 
