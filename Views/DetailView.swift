@@ -36,12 +36,10 @@ struct DetailView: View {
                         .cornerRadius(4)
                 }
             }
-
+            
             Section(header: Text("Attendees")) {
                 ForEach(scrum.attendees) { attendee in
-                    List {
-                        Label(attendee.name, systemImage: "person")
-                    }
+                    Label(attendee.name, systemImage: "person")
                 }
             }
         }
