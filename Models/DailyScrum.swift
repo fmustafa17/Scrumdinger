@@ -43,7 +43,7 @@ extension DailyScrum {
     }
     
     var data: Data {
-        Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme)
+        return Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme)
     }
 }
 
