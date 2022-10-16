@@ -52,6 +52,11 @@ struct DetailEditView: View {
                     .disabled(newAttendee.isEmpty)
                 }
             }
+            
+            Section(header: Text("Theme")) {
+                ThemePicker(selection: $data.theme)
+            }
+            
         }
     }
 }
