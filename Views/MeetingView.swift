@@ -15,27 +15,8 @@ struct MeetingView: View {
             RoundedRectangle(cornerRadius: 12)
                 .fill(scrum.theme.mainColor)
             VStack {
-                ProgressView(value: 5, total: 15)
-                HStack {
-                    VStack(alignment: .leading) { // override the default behavior, which is center
-                        Text("Seconds elapsed")
-                            .font(.caption) // modifier
-                        Label("300",
-                              systemImage: "hourglass.bottomhalf.fill")
-                    }
-                    Spacer() // use available space from the containing parent view
-                    VStack(alignment: .trailing) { // override the default behavior, which is center
-                        Text("Seconds remaining")
-                            .font(.caption)
-                        Label("600",
-                              systemImage: "hourglass.tophalf.fill")
-                    }
-                }
-                // By default, VoiceOver reads system names for the images
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel("Time Remaining")
-                .accessibilityValue("10 minutes")
-                
+                MeetingHeaderView()
+
                 Circle()
                     .strokeBorder(lineWidth: 24)
                 
