@@ -27,6 +27,7 @@ struct DetailEditView: View {
                     Text("\(Int(data.lengthInMinutes)) minutes")
                         .accessibilityHidden(true)
                 }
+                ThemePicker(selection: $data.theme)
             }
             
             Section(header: Text("Attendees")) {
@@ -52,11 +53,6 @@ struct DetailEditView: View {
                     .disabled(newAttendee.isEmpty)
                 }
             }
-            
-            Section(header: Text("Theme")) {
-                ThemePicker(selection: $data.theme)
-            }
-            
         }
     }
 }
