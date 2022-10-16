@@ -9,14 +9,19 @@ import SwiftUI
 
 struct MeetingView: View {
     @Binding var scrum: DailyScrum
-
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 12)
                 .fill(scrum.theme.mainColor)
-            VStack {
-                MeetingHeaderView()
 
+            VStack {
+                MeetingHeaderView(
+                    secondsElapsed: 60,
+                    secondsRemaining: 60,
+                    scrum: scrum
+                )
+                
                 Circle()
                     .strokeBorder(lineWidth: 24)
                 
